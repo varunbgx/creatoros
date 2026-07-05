@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.02), 0 2px 6px -1px rgba(124, 58, 237, 0.03);
+  --color-accent-purple: #7C3AED;
+}
+
+:root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --primary-gradient: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  background-color: #faf9fc;
+}
+
+/* Design System Utilities */
+.creator-card {
+  background-color: #ffffff;
+  padding: 1.5rem; /* p-6 padding */
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid rgba(244, 244, 245, 0.9);
+  box-shadow: var(--shadow-card);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #1e1e24;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Custom scrollbars for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Custom page fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Priority task animation */
+.priority-checkbox:checked + span {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Kanban custom styles */
+.kanban-column {
+  min-height: calc(100vh - 280px);
+}
